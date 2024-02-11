@@ -2,25 +2,21 @@ import { Button } from "@mantine/core";
 import { useState } from "react";
 
 export function LandingPage() {
-  const sadEmojies = [
-    "😖",
-    "☹",
-    "😕",
-    "😔",
-    "🫨",
-    "😱",
-    "😩",
-    "🤕",
-    "😒",
-    "😏"
-   
-  ];
+  const sadEmojies = ["😖", "☹", "😕", "😔", "🫨", "😱", "😩", "🤕", "😒", "😏"];
   const [sadEmojiIndex, setSadEmojiIndex] = useState(0);
 
-const urlSadEmojiesArr = [
-    "1f62d","1f974","1f611", "1f914","1f61e",
-    "1f622", "1f623", "1f629", "1f633", "1fae4"
-]
+  const urlSadEmojiesArr = [
+    "1f62d",
+    "1f974",
+    "1f611",
+    "1f914",
+    "1f61e",
+    "1f622",
+    "1f623",
+    "1f629",
+    "1f633",
+    "1fae4",
+  ];
 
   const noButtonLinersArr = [
     "Give love a chance, let's make Valentine's Day extra special!",
@@ -38,34 +34,37 @@ const urlSadEmojiesArr = [
   const [convinceTextIndex, setConvinceTextIndex] = useState(0);
 
   return (
-
     <div className="w-screen h-screen flex items-center justify-center px-4 relative">
-        <div className="absolute text-[10rem] z-20">
-            <div>
-            </div>
-
-        </div>
+      <div className="absolute text-[10rem] z-20">
+        <div></div>
+      </div>
       <div className="flex flex-col items-center space-y-12">
         <span className="font-semibold text-[1.5rem]">
           Will you be my valentine?
         </span>
 
         <div className="flex flex-row justify-between mt-4 w-full">
-          <Button size="lg" color="green.6">
+          <Button size="lg" color="green.6 " className="w-24">
             Yes 🥰
           </Button>
           <div>
-          <img src={`https://fonts.gstatic.com/s/e/notoemoji/latest/${urlSadEmojiesArr[sadEmojiIndex]}/512.gif`} alt="😆" width="64" height="64"/>
+            <img
+            className="w-16 h-16"
+              src={`https://fonts.gstatic.com/s/e/notoemoji/latest/${urlSadEmojiesArr[sadEmojiIndex]}/512.gif`}
+              alt="😆"
+              width="64"
+              height="64"
+            />
           </div>
           <Button
+            className="w-24"
             onClick={() => {
-
-                setConvinceTextIndex((prevValue) => {
-                    if (prevValue + 1 > noButtonLinersArr.length - 1) {
-                        return 0
-                    }
-                    return prevValue + 1
-                })
+              setConvinceTextIndex((prevValue) => {
+                if (prevValue + 1 > noButtonLinersArr.length - 1) {
+                  return 0;
+                }
+                return prevValue + 1;
+              });
 
               setSadEmojiIndex((prevValue) => {
                 if (prevValue + 1 > urlSadEmojiesArr.length - 1) {
@@ -81,7 +80,9 @@ const urlSadEmojiesArr = [
           </Button>
         </div>
 
-        <div className="mt-2 font-medium ml-4 text-blue-950">{noButtonLinersArr[convinceTextIndex]}</div>
+        <div className="mt-2 font-medium ml-4 text-blue-950 w-96">
+          {noButtonLinersArr[convinceTextIndex]}
+        </div>
       </div>
     </div>
   );
