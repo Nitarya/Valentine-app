@@ -75,7 +75,7 @@ export function LandingPage() {
 
               setSadEmojiIndex((prevValue) => {
                 if (prevValue + 1 > urlSadEmojiesArr.length - 1) {
-                  return 0;
+                  return 1;
                 }
                 return prevValue + 1;
               });
