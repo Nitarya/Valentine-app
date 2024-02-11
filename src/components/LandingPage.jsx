@@ -6,7 +6,7 @@ export function LandingPage() {
   const [sadEmojiIndex, setSadEmojiIndex] = useState(0);
 
   const urlSadEmojiesArr = [
-    "1f62d",
+    "1f48c",
     "1f974",
     "1f611",
     "1f914",
@@ -34,7 +34,13 @@ export function LandingPage() {
   const [convinceTextIndex, setConvinceTextIndex] = useState(0);
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center px-4 relative">
+    <div className="w-screen h-screen flex items-center justify-center px-4 relative"
+    style={{ 
+        backgroundImage: `url('https://hips.hearstapps.com/hmg-prod/images/valentines-day-zoom-backgrounds-hearts-1643038425.jpeg?crop=1xw:1xh;center,top&resize=980:*')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       <div className="absolute text-[10rem] z-20">
         <div></div>
       </div>
@@ -80,7 +86,7 @@ export function LandingPage() {
           </Button>
         </div>
 
-        <div className="mt-2 font-medium ml-4 text-blue-950 w-96">
+        <div className="mt-2 font-medium ml-4 text-blue-950 w-48 lg:w-96">
           {noButtonLinersArr[convinceTextIndex]}
         </div>
       </div>
