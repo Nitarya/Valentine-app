@@ -6,7 +6,15 @@ export function LandingPage() {
   const sadEmojies = ["😖", "☹", "😕", "😔", "🫨", "😱", "😩", "🤕", "😒", "😏"];
   const [sadEmojiIndex, setSadEmojiIndex] = useState(0);
   const [showModal, setShowModal] = useState(false)
+  // Get the query string from the URL
+const queryString = window.location.search;
 
+// Create a new URLSearchParams object from the query string
+const urlParams = new URLSearchParams(queryString);
+
+// Get the value of the 'parameterName' query parameter
+const parameterValue = urlParams.get('name');
+  const [customName, setCustomName] = useState(parameterValue)
 
   const urlSadEmojiesArr = [
     "1f48c",
@@ -50,7 +58,7 @@ export function LandingPage() {
       </div>
       <div className="flex flex-col items-center space-y-6">
       <span className="font-bold text-[2rem] text-center">
-         Dear Ratan Kumar Yadav 💓
+         Dear {customName} 💓
         </span>
         <span className="font-bold text-[3rem] text-center">
           Will you be my valentine? 
