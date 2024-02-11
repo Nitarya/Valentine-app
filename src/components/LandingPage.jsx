@@ -30,7 +30,7 @@ const parameterValue = urlParams.get('name');
   ];
 
   const noButtonLinersArr = [
-    "Give love a chance, let's make Valentine's Day extra special!",
+    " Say yes to love darling! Love is in the air.",
     "Say yes and let's paint the town red with love!",
     "Just a click away from making hearts flutter! Click yes?",
     "Love is in the air, let's catch it together! Click yes!",
@@ -78,12 +78,13 @@ const parameterValue = urlParams.get('name');
             />
           </div>
           <Button
+        
             variant="light"
             // className="w-28"
             onClick={() => {
               setConvinceTextIndex((prevValue) => {
                 if (prevValue + 1 > noButtonLinersArr.length - 1) {
-                  return 0;
+                  return 1;
                 }
                 return prevValue + 1;
               });
@@ -109,7 +110,7 @@ const parameterValue = urlParams.get('name');
       </div>
       <div onClick={() => {
         setShowModal(true)
-      }} className="mt-16 text-[1.5rem] underline">
+      }} className="mt-16 text-[1.5rem] underline cursor-pointer hover:text-yellow-800">
             Make your own 
         </div>
        {
