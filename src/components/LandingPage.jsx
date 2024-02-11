@@ -45,12 +45,12 @@ export function LandingPage() {
         <div></div>
       </div>
       <div className="flex flex-col items-center space-y-12">
-        <span className="font-semibold text-[1.5rem]">
+        <span className="font-bold text-[3rem]">
           Will you be my valentine?
         </span>
 
         <div className="flex flex-row justify-between mt-4 w-full">
-          <Button size="lg" color="green.6 " className="w-24">
+          <Button  variant="light" size="lg" color="green.6 " className="w-24">
             Yes 🥰
           </Button>
           <div>
@@ -63,6 +63,7 @@ export function LandingPage() {
             />
           </div>
           <Button
+           variant="light"
             className="w-24"
             onClick={() => {
               setConvinceTextIndex((prevValue) => {
@@ -86,7 +87,7 @@ export function LandingPage() {
           </Button>
         </div>
 
-        <div className="mt-2 font-medium ml-4 text-blue-950 w-48 lg:w-96">
+        <div className="mt-2 font-semibold ml-4 text-blue-950 w-48 lg:w-96 text-[1.5rem]">
           {noButtonLinersArr[convinceTextIndex]}
         </div>
       </div>
