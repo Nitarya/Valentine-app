@@ -1,9 +1,12 @@
 import { Button } from "@mantine/core";
 import { useState } from "react";
+import MakePage from "./MakePage";
 
 export function LandingPage() {
   const sadEmojies = ["😖", "☹", "😕", "😔", "🫨", "😱", "😩", "🤕", "😒", "😏"];
   const [sadEmojiIndex, setSadEmojiIndex] = useState(0);
+  const [showModal, setShowModal] = useState(false)
+
 
   const urlSadEmojiesArr = [
     "1f48c",
@@ -34,28 +37,32 @@ export function LandingPage() {
   const [convinceTextIndex, setConvinceTextIndex] = useState(0);
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center px-4 relative"
-    style={{ 
+    <div
+      className="w-screen h-screen  flex flex-col items-center justify-center px-4 relative"
+      style={{
         backgroundImage: `url('https://hips.hearstapps.com/hmg-prod/images/valentines-day-zoom-backgrounds-hearts-1643038425.jpeg?crop=1xw:1xh;center,top&resize=980:*')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <div className="absolute text-[10rem] z-20">
         <div></div>
       </div>
-      <div className="flex flex-col items-center space-y-12">
-        <span className="font-bold text-[3rem]">
-          Will you be my valentine?
+      <div className="flex flex-col items-center space-y-6">
+      <span className="font-bold text-[2rem] text-center">
+         Dear Ratan Kumar Yadav 💓
+        </span>
+        <span className="font-bold text-[3rem] text-center">
+          Will you be my valentine? 
         </span>
 
         <div className="flex flex-row justify-between mt-4 w-full">
-          <Button  variant="light" size="lg" color="green.6 " className="w-24">
+          <Button variant="light" size="lg" color="green.6 ">
             Yes 🥰
           </Button>
           <div>
             <img
-            className="w-16 h-16"
+              className="w-16 h-16"
               src={`https://fonts.gstatic.com/s/e/notoemoji/latest/${urlSadEmojiesArr[sadEmojiIndex]}/512.gif`}
               alt="😆"
               width="64"
@@ -63,8 +70,8 @@ export function LandingPage() {
             />
           </div>
           <Button
-           variant="light"
-            className="w-24"
+            variant="light"
+            // className="w-28"
             onClick={() => {
               setConvinceTextIndex((prevValue) => {
                 if (prevValue + 1 > noButtonLinersArr.length - 1) {
@@ -83,14 +90,24 @@ export function LandingPage() {
             size="lg"
             color="gray.6"
           >
-            No {sadEmojies[sadEmojiIndex]}
+            <span className="font-bold">No {sadEmojies[sadEmojiIndex]}</span>
           </Button>
         </div>
 
-        <div className="mt-2 font-semibold ml-4 text-blue-950 w-48 lg:w-96 text-[1.5rem]">
+        <div className=" mt-2 font-semibold ml-4 text-blue-950 w-48 max-h-20 lg:w-96 text-[1.5rem] ">
           {noButtonLinersArr[convinceTextIndex]}
         </div>
+        
       </div>
+      <div onClick={() => {
+        setShowModal(true)
+      }} className="mt-16 text-[1.5rem] underline">
+            Make your own 
+        </div>
+       {
+showModal && <MakePage hideModal={setShowModal}/>
+
+       } 
     </div>
   );
 }
